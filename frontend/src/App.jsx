@@ -1,40 +1,66 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { Box } from '@mui/material'
 import { AuthProvider } from './contexts/AuthContext'
-import Login from './components/Login'
-import Dashboard from './components/Dashboard'
-import Patients from './components/Patients'
-import Appointments from './components/Appointments'
+import LoginPage from './pages/LoginPage'
+import DashboardPage from './pages/DashboardPage'
+import PatientsPage from './pages/PatientsPage'
+import AppointmentsPage from './pages/AppointmentsPage'
+import TreatmentPage from './pages/TreatmentPage'
+import UserPage from './pages/UserPage'
+import InventoryPage from './pages/InventoryPage'
+import ReportsPage from './pages/ReportsPage'
 import ProtectedRoute from './components/ProtectedRoute'
-
-
+import { ROUTES } from './constants/app'
 
 function App() {
   return (
-    <AuthProvider>
-      <Router>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/dashboard" element={
+    <Box sx={{ width: '100%', minHeight: '100vh' }}>
+      <AuthProvider>
+        <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
+          <Routes>
+          <Route path={ROUTES.LOGIN} element={<LoginPage />} />
+          <Route path={ROUTES.DASHBOARD} element={
             <ProtectedRoute>
-              <Dashboard />
+              <DashboardPage />
             </ProtectedRoute>
           } />
-          <Route path="/patients" element={
+          <Route path={ROUTES.PATIENTS} element={
             <ProtectedRoute>
-              <Patients />
+              <PatientsPage />
             </ProtectedRoute>
           } />
-          <Route path="/appointments" element={
+          <Route path={ROUTES.APPOINTMENTS} element={
             <ProtectedRoute>
-              <Appointments />
+              <AppointmentsPage />
             </ProtectedRoute>
           } />
-          <Route path="/" element={<Navigate to="/login" replace />} />
-          <Route path="*" element={<Navigate to="/login" replace />} />
+          <Route path={ROUTES.TREATMENT} element={
+            <ProtectedRoute>
+              <TreatmentPage />
+            </ProtectedRoute>
+          } />
+          <Route path={ROUTES.USER} element={
+            <ProtectedRoute>
+              <UserPage />
+            </ProtectedRoute>
+          } />
+          <Route path={ROUTES.INVENTORY} element={
+            <ProtectedRoute>
+              <InventoryPage />
+            </ProtectedRoute>
+          } />
+          <Route path={ROUTES.REPORTS} element={
+            <ProtectedRoute>
+              <ReportsPage />
+            </ProtectedRoute>
+          } />
+          <Route path="/" element={<Navigate to={ROUTES.LOGIN} replace />} />
+          <Route path="*" element={<Navigate to={ROUTES.LOGIN} replace />} />
         </Routes>
       </Router>
     </AuthProvider>
+    </Box>
   )
 }
 

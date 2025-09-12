@@ -155,9 +155,6 @@ const Login = () => {
 
   return (
     <StyledContainer maxWidth={false}>
-      <HimsLogo>
-        🏥 HIMS
-      </HimsLogo>
       
       <LoginCard>
         <LoginTitle variant="h4">
