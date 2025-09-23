@@ -1,7 +1,6 @@
 import React from 'react';
-import { Card, CardContent, Typography, Box } from '@mui/material';
-import MainLayout from '../components/layout/MainLayout';
-import PrimaryButton from '../components/atoms/PrimaryButton';
+import { Card, CardContent, Box } from '@mui/material';
+import { MainLayout, PrimaryButton, Typography } from '../components';
 import { ROUTES } from '../constants/app';
 import { useNavigate } from 'react-router-dom';
 

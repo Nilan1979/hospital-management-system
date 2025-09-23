@@ -10,15 +10,7 @@ import {
   MenuItem,
   Box
 } from '@mui/material';
-import {
-  LocalHospital as HospitalIcon,
-  AccountCircle,
-  ExitToApp as LogoutIcon,
-  ArrowBack as ArrowBackIcon,
-  Menu as MenuIcon,
-  ChevronLeft as ChevronLeftIcon,
-  ChevronRight as ChevronRightIcon
-} from '@mui/icons-material';
+import { Icon, Typography as CustomTypography, Avatar } from '../atoms';
 import { APP_CONFIG, ROUTES } from '../../constants/app';
 import { COLORS } from '../../constants/theme';
 
@@ -72,7 +64,7 @@ const AppHeader = ({
             onClick={onMenuClick}
             sx={{ mr: 2 }}
           >
-            <MenuIcon />
+            <Icon name="menu" />
           </IconButton>
         )}
         
@@ -83,7 +75,7 @@ const AppHeader = ({
             onClick={handleBackClick}
             sx={{ mr: 2 }}
           >
-            <ArrowBackIcon />
+            <Icon name="back" />
           </IconButton>
         )}
         
@@ -92,26 +84,26 @@ const AppHeader = ({
           onClick={onSidebarToggle}
           sx={{ mr: 2 }}
         >
-          {sidebarCollapsed ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+          <Icon name={sidebarCollapsed ? "chevronRight" : "chevronLeft"} />
         </IconButton>
         
-        <HospitalIcon sx={{ mr: 2 }} />
+        <Icon name="hospital" sx={{ mr: 2 }} />
         
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <CustomTypography variant="h6" sx={{ flexGrow: 1 }}>
           {title}
-        </Typography>
+        </CustomTypography>
         
         {user && (
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
-            <Typography variant="body1" sx={{ mr: 2 }}>
+            <CustomTypography variant="body1" sx={{ mr: 2 }}>
               Welcome, {user.username} ({user.userType})
-            </Typography>
+            </CustomTypography>
             <IconButton
               size="large"
               onClick={handleMenu}
               color="inherit"
             >
-              <AccountCircle />
+              <Icon name="account" />
             </IconButton>
             <Menu
               anchorEl={anchorEl}
@@ -119,7 +111,7 @@ const AppHeader = ({
               onClose={handleClose}
             >
               <MenuItem onClick={handleLogout}>
-                <LogoutIcon sx={{ mr: 1 }} />
+                <Icon name="logout" sx={{ mr: 1 }} />
                 Logout
               </MenuItem>
             </Menu>

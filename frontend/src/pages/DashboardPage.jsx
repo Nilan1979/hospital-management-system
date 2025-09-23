@@ -1,9 +1,7 @@
 import React from 'react';
-import { Typography, Box, Card, CardContent } from '@mui/material';
+import { Box, Card, CardContent } from '@mui/material';
 import { useAuth } from '../hooks/useAuth';
-import MainLayout from '../components/layout/MainLayout';
-import DashboardGrid from '../components/molecules/DashboardGrid';
-import QuickStats from '../components/molecules/QuickStats';
+import { MainLayout, DashboardGrid, QuickStats, Typography } from '../components';
 import { APP_CONFIG } from '../constants/app';
 import { COLORS, SPACING } from '../constants/theme';
 

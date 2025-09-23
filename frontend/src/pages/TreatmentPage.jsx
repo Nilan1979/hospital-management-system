@@ -1,6 +1,6 @@
 import React from 'react';
-import { Typography, Box, Card, CardContent, Grid } from '@mui/material';
-import MainLayout from '../components/layout/MainLayout';
+import { Box, Card, CardContent, Grid } from '@mui/material';
+import { MainLayout, Typography } from '../components';
 
 const TreatmentPage = () => {
 

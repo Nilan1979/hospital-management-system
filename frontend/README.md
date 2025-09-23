@@ -59,15 +59,29 @@ src/
 │   │   ├── Logo.jsx
 │   │   ├── FormInput.jsx
 │   │   ├── PrimaryButton.jsx
-│   │   └── InfoCard.jsx
+│   │   ├── InfoCard.jsx
+│   │   ├── Icon.jsx
+│   │   ├── Typography.jsx
+│   │   ├── Badge.jsx
+│   │   ├── Chip.jsx
+│   │   ├── Avatar.jsx
+│   │   └── Divider.jsx
 │   ├── molecules/          # Component combinations
 │   │   ├── LoginForm.jsx
 │   │   ├── DashboardGrid.jsx
-│   │   └── QuickStats.jsx
-│   ├── layout/             # Layout components
+│   │   ├── QuickStats.jsx
+│   │   ├── NavigationItem.jsx
+│   │   ├── SearchBar.jsx
+│   │   └── ActionButtons.jsx
+│   ├── organisms/          # Complex UI sections
 │   │   ├── AppHeader.jsx
+│   │   ├── Sidebar.jsx
+│   │   ├── DataTable.jsx
+│   │   └── DashboardOverview.jsx
+│   ├── templates/          # Page layouts
 │   │   ├── MainLayout.jsx
-│   │   └── FullscreenLayout.jsx
+│   │   ├── FullscreenLayout.jsx
+│   │   └── PageTemplate.jsx
 │   └── ProtectedRoute.jsx
 ├── pages/                  # Page components
 │   ├── LoginPage.jsx
@@ -197,8 +211,8 @@ npm run build
 
 ## 📚 Additional Documentation
 
-- [Component Architecture Guide](./COMPONENT_ARCHITECTURE.md)
-- [Login System Documentation](./LOGIN_README.md)
+- [Component Architecture Guide](./src/components/README.md)
+- [Atomic Design Pattern Implementation](./ATOMIC_DESIGN.md)
 
 ## 🤝 Contributing
 

@@ -3,7 +3,9 @@ import { styled } from '@mui/material/styles';
 import { Card, CardContent, Typography, Box } from '@mui/material';
 import { COLORS, SPACING, BORDER_RADIUS, SHADOWS } from '../../constants/theme';
 
-const StyledCard = styled(Card)(({ clickable }) => ({
+const StyledCard = styled(Card, {
+  shouldForwardProp: (prop) => prop !== 'clickable',
+})(({ clickable }) => ({
   borderRadius: BORDER_RADIUS.medium,
   boxShadow: SHADOWS.light,
   transition: 'transform 0.2s, box-shadow 0.2s',

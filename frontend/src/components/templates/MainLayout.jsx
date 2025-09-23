@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { styled, useTheme } from '@mui/material/styles';
 import { Box, useMediaQuery } from '@mui/material';
-import AppHeader from './AppHeader';
-import Sidebar from './Sidebar';
+import { AppHeader, Sidebar } from '../organisms';
 import { COLORS, SPACING } from '../../constants/theme';
 
 const PageContainer = styled(Box)(() => ({

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Typography, Box, Card, CardContent, Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Chip } from '@mui/material';
-import MainLayout from '../components/layout/MainLayout';
+import { Box, Card, CardContent, Grid, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
+import { MainLayout, Typography, Chip } from '../components';
 
 const UserPage = () => {
   // Sample user data

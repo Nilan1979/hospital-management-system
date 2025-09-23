@@ -10,25 +10,19 @@ import {
   Box,
   Tooltip
 } from '@mui/material';
-import {
-  Dashboard as DashboardIcon,
-  CalendarToday as CalendarIcon,
-  LocalHospital as LocalHospitalIcon,
-  People as PeopleIcon,
-  Inventory as InventoryIcon,
-  Assessment as AssessmentIcon
-} from '@mui/icons-material';
+import { Icon } from '../atoms';
+import { NavigationItem } from '../molecules';
 import { useAuth } from '../../hooks/useAuth';
 import { SIDEBAR_NAVIGATION, APP_CONFIG } from '../../constants/app';
 import { COLORS, SPACING } from '../../constants/theme';
 
 const iconMap = {
-  DashboardIcon: <DashboardIcon />,
-  CalendarIcon: <CalendarIcon />,
-  LocalHospitalIcon: <LocalHospitalIcon />,
-  PeopleIcon: <PeopleIcon />,
-  InventoryIcon: <InventoryIcon />,
-  AssessmentIcon: <AssessmentIcon />
+  DashboardIcon: 'dashboard',
+  CalendarIcon: 'calendar',
+  LocalHospitalIcon: 'hospital',
+  PeopleIcon: 'people',
+  InventoryIcon: 'inventory',
+  AssessmentIcon: 'assessment'
 };
 
 const SIDEBAR_WIDTH = 260;
@@ -62,43 +56,14 @@ const Sidebar = ({ open, onClose, variant = 'permanent', collapsed = false }) =>
         {filteredNavigation.map((item) => {
           const active = isActive(item.path);
           return (
-            <ListItem key={item.id} disablePadding>
-              <Tooltip title={collapsed ? item.title : ''} placement="right">
-                <ListItemButton
-                  onClick={() => handleNavigation(item.path)}
-                  sx={{
-                    mx: collapsed ? SPACING.xs : SPACING.sm,
-                    mb: SPACING.xs,
-                    borderRadius: 1,
-                    minHeight: 48,
-                    justifyContent: collapsed ? 'center' : 'flex-start',
-                    backgroundColor: active ? COLORS.primary.main : 'transparent',
-                    color: active ? 'white' : COLORS.text.secondary,
-                    '&:hover': {
-                      backgroundColor: active ? COLORS.primary.dark : COLORS.background.paper,
-                    },
-                    '& .MuiListItemIcon-root': {
-                      color: active ? 'white' : COLORS.text.secondary,
-                      minWidth: collapsed ? 'auto' : 40,
-                      justifyContent: 'center'
-                    }
-                  }}
-                >
-                  <ListItemIcon>
-                    {iconMap[item.icon]}
-                  </ListItemIcon>
-                  {!collapsed && (
-                    <ListItemText 
-                      primary={item.title}
-                      primaryTypographyProps={{
-                        fontSize: '0.875rem',
-                        fontWeight: active ? 'bold' : 'normal'
-                      }}
-                    />
-                  )}
-                </ListItemButton>
-              </Tooltip>
-            </ListItem>
+            <NavigationItem
+              key={item.id}
+              icon={iconMap[item.icon]}
+              title={item.title}
+              active={active}
+              collapsed={collapsed}
+              onClick={() => handleNavigation(item.path)}
+            />
           );
         })}
       </List>
