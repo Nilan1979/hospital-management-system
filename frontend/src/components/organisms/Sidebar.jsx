@@ -22,6 +22,7 @@ const iconMap = {
   LocalHospitalIcon: 'hospital',
   PeopleIcon: 'people',
   InventoryIcon: 'inventory',
+  LocalPharmacyIcon: 'pharmacy',
   AssessmentIcon: 'assessment'
 };
 

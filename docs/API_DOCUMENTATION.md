@@ -206,23 +206,107 @@ Get treatment history.
 
 ## Inventory Management Endpoints
 
-### POST /inventory
-Add new inventory item.
+### POST /inventory/products
+Add new inventory product.
 
-### GET /inventory
-Get inventory items with filtering.
+**Request Body:**
+```json
+{
+  "name": "string",
+  "description": "string",
+  "category": "string",
+  "subcategory": "string",
+  "sku": "string",
+  "barcode": "string",
+  "manufacturer": "string",
+  "supplier": "string",
+  "unitPrice": "number", // in LKR
+  "sellingPrice": "number", // in LKR
+  "stockQuantity": "number",
+  "minimumStock": "number",
+  "reorderPoint": "number",
+  "expiryDate": "ISO8601 date",
+  "batchNumber": "string",
+  "location": "string",
+  "status": "string"
+}
+```
 
-### PUT /inventory/:id
-Update inventory item.
+**Response:**
+```json
+{
+  "success": true,
+  "data": {
+    "product": {
+      "id": "string",
+      "name": "string",
+      "sku": "string",
+      "pricing": {
+        "unitPrice": 1250.00, // LKR
+        "sellingPrice": 1500.00 // LKR
+      },
+      "stock": {
+        "currentQuantity": 100,
+        "minimumStock": 25
+      }
+    }
+  }
+}
+```
 
-### DELETE /inventory/:id
-Remove inventory item.
+### GET /inventory/products
+Get inventory products with filtering and pagination.
+
+**Query Parameters:**
+- `page` (number): Page number (default: 1)
+- `limit` (number): Items per page (default: 10)
+- `category` (string): Filter by category
+- `status` (string): Filter by stock status
+- `search` (string): Search by name or SKU
+- `minPrice` (number): Minimum price in LKR
+- `maxPrice` (number): Maximum price in LKR
+
+### POST /inventory/issues
+Issue products to patients or departments.
+
+**Request Body:**
+```json
+{
+  "type": "string", // "outpatient", "inpatient", "department"
+  "patient": {
+    "id": "string",
+    "name": "string",
+    "type": "string",
+    "bedNumber": "string",
+    "wardId": "string"
+  },
+  "items": [{
+    "productId": "string",
+    "quantity": "number",
+    "unitPrice": "number" // LKR
+  }],
+  "issuedBy": "string",
+  "notes": "string"
+}
+```
+
+### GET /inventory/categories
+Get product categories and subcategories.
+
+### POST /inventory/categories
+Create new product category.
 
 ### GET /inventory/alerts
-Get low-stock alerts.
+Get low-stock and expiry alerts.
 
-### POST /inventory/purchase-orders
-Create purchase order.
+### GET /inventory/reports
+Generate inventory reports with LKR values.
+
+**Query Parameters:**
+- `type` (string): "stock-summary", "movement", "valuation", "expiry"
+- `startDate` (string): Start date for report
+- `endDate` (string): End date for report
+- `category` (string): Filter by category
 
 ## Medical Records Endpoints
 
@@ -312,6 +396,50 @@ const response = await fetch('/api/v1/appointments', {
     appointmentDate: '2025-09-15T10:00:00Z',
     timeSlot: '10:00-10:30',
     reason: 'Regular checkup'
+  })
+});
+```
+
+### Adding Inventory Product
+```javascript
+const response = await fetch('/api/v1/inventory/products', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + token
+  },
+  body: JSON.stringify({
+    name: 'Surgical Masks',
+    category: 'PPE',
+    unitPrice: 125.00, // LKR
+    sellingPrice: 150.00, // LKR
+    stockQuantity: 500,
+    minimumStock: 100
+  })
+});
+```
+
+### Issuing Products
+```javascript
+const response = await fetch('/api/v1/inventory/issues', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer ' + token
+  },
+  body: JSON.stringify({
+    type: 'outpatient',
+    patient: {
+      id: '507f1f77bcf86cd799439013',
+      name: 'John Doe',
+      type: 'outpatient'
+    },
+    items: [{
+      productId: '507f1f77bcf86cd799439014',
+      quantity: 10,
+      unitPrice: 125.00 // LKR
+    }],
+    totalAmount: 1250.00 // LKR
   })
 });
 ```

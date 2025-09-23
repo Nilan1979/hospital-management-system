@@ -12,6 +12,14 @@ A modern, enterprise-grade Hospital Management System frontend built with React 
 - Protected route implementation
 - Session management with localStorage
 
+### 📦 Inventory Management System
+- **Comprehensive Dashboard**: Real-time inventory overview with LKR currency support
+- **Product Management**: Complete CRUD operations for medical products and supplies
+- **Category Management**: Hierarchical category system with subcategories
+- **Issue Tracking**: Issue products to outpatients and admitted patients
+- **Stock Monitoring**: Automated alerts for low stock and expiry warnings
+- **Mobile-First Design**: Optimized for tablets and mobile devices in healthcare settings
+
 ### 🎨 Modern UI/UX
 - Material Design 3 principles
 - Fully responsive design
@@ -86,8 +94,11 @@ src/
 ├── pages/                  # Page components
 │   ├── LoginPage.jsx
 │   ├── DashboardPage.jsx
+│   ├── InventoryPage.jsx
 │   ├── PatientsPage.jsx
-│   └── AppointmentsPage.jsx
+│   ├── AppointmentsPage.jsx
+│   ├── TreatmentPage.jsx
+│   └── UserPage.jsx
 ├── contexts/               # React Context
 │   └── AuthContext.jsx
 ├── hooks/                  # Custom hooks
@@ -144,9 +155,10 @@ npm run test:coverage # Test coverage report
 ### Color Palette
 - **Primary**: #00897b (Medical Teal)
 - **Secondary**: #f50057 (Accent Pink)
-- **Success**: #4caf50
-- **Warning**: #ff9800
-- **Error**: #f44336
+- **Success**: #4caf50 (In Stock, Positive Trends)
+- **Warning**: #ff9800 (Low Stock, Expiry Warnings)
+- **Error**: #f44336 (Out of Stock, Critical Alerts)
+- **Info**: #2196f3 (Information, Reports)
 
 ### Typography
 - **Font Family**: Roboto, Helvetica, Arial
@@ -212,6 +224,7 @@ npm run build
 ## 📚 Additional Documentation
 
 - [Component Architecture Guide](./src/components/README.md)
+- [Inventory Management Guide](./INVENTORY_MANAGEMENT_GUIDE.md)
 - [Atomic Design Pattern Implementation](./ATOMIC_DESIGN.md)
 
 ## 🤝 Contributing

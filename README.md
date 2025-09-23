@@ -40,12 +40,14 @@ The Hospital Management System is a full-stack web application developed as a po
 - User activity logging and audit trails
 
 ### 📦 Inventory Management
-- Medical equipment and supplies tracking
-- Automated low-stock alerts
-- Purchase order and supplier management
-- Equipment maintenance scheduling
-- Medicine expiry date monitoring
-- Usage analytics and automated reordering
+- **Product Management**: Add, edit, and manage medical products with detailed specifications
+- **Category Management**: Create hierarchical categories and subcategories for organized inventory
+- **Issue Tracking**: Issue products to outpatients and admitted patients with complete audit trails
+- **Stock Monitoring**: Real-time stock levels with automated low-stock alerts and expiry warnings
+- **Supplier Management**: Track suppliers, purchase orders, and procurement history
+- **Department Issues**: Internal transfers and emergency supply management
+- **Advanced Reporting**: Comprehensive inventory reports with LKR currency support
+- **Mobile Optimization**: Full mobile support for inventory operations on tablets and phones
 
 ## 🏗️ Project Structure
 
@@ -145,6 +147,9 @@ hospital-management-system/
 ## 📖 Documentation
 
 - [API Documentation](./docs/API_DOCUMENTATION.md)
+- [Frontend Architecture Guide](./frontend/README.md)
+- [Inventory Management Guide](./frontend/INVENTORY_MANAGEMENT_GUIDE.md)
+- [Component Architecture](./frontend/src/components/README.md)
 - [Deployment Guide](./docs/DEPLOYMENT_GUIDE.md)
 - [Testing Strategy](./docs/TESTING_STRATEGY.md)
 - [Security Guidelines](./docs/SECURITY_GUIDELINES.md)
@@ -171,6 +176,9 @@ If you encounter any issues during local development, please refer to the [Troub
 - ✅ Maintain comprehensive project documentation
 - ✅ Build scalable and maintainable code architecture
 - ✅ Showcase understanding of healthcare application requirements
+- ✅ Implement comprehensive inventory management with LKR currency support
+- ✅ Build atomic design component architecture for scalability
+- ✅ Create mobile-first responsive healthcare interfaces
 
 ## 🎓 Educational Value
 

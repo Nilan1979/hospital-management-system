@@ -26,9 +26,16 @@ src/components/
 - **Icon** - Centralized icon system with Material-UI icons
 - **Typography** - Styled text component with theme integration
 - **Badge** - Notification badges and status indicators
-- **Chip** - Status chips with color variants
+- **Chip** - Status chips with color variants (inventory status, categories)
 - **Avatar** - User avatar component with size variants
 - **Divider** - Visual separation element
+
+### Inventory-Specific Atoms:
+- **StockBadge** - Stock level indicator with color coding
+- **CategoryChip** - Category display chip with hierarchy support
+- **ProductStatus** - Product status indicator (active/inactive/expired)
+- **QuantityInput** - Specialized quantity input with validation
+- **ExpiryDateBadge** - Expiry date indicator with warning states
 
 ### Usage Example:
 ```jsx
@@ -50,9 +57,14 @@ import { PrimaryButton, Icon, Typography } from '../components';
 - **NavigationItem** - Sidebar navigation button
 - **SearchBar** - Search input with filters
 - **ActionButtons** - Button groups for actions
-- **StatusCard** - Card with status information
-- **UserMenu** - User account dropdown menu
-- **FormGroup** - Form field grouping
+
+### Inventory-Specific Molecules:
+- **ProductCard** - Product information card with LKR pricing
+- **CategorySelector** - Category selection dropdown with hierarchy
+- **StockAlert** - Stock alert component with severity levels
+- **IssueForm** - Product issue form for patients/departments
+- **ProductSearchBar** - Advanced product search with filters
+- **PriceDisplay** - LKR currency formatter component
 
 ### Usage Example:
 ```jsx
@@ -78,9 +90,14 @@ import { SearchBar, ActionButtons } from '../components';
 - **AppHeader** - Application top navigation bar
 - **Sidebar** - Collapsible side navigation
 - **DataTable** - Advanced data table with pagination, search, and actions
-- **DashboardOverview** - Complete dashboard overview section
-- **InventoryTable** - Specialized inventory management table
-- **StatsSection** - Statistics overview section
+
+### Inventory-Specific Organisms:
+- **InventoryDashboard** - Complete inventory overview with LKR stats
+- **ProductsTable** - Specialized product management table
+- **CategoryManager** - Category management interface
+- **IssueTracker** - Product issue tracking system
+- **StockAlertsPanel** - Stock alerts monitoring panel
+- **InventoryReports** - Comprehensive reporting interface
 
 ### Usage Example:
 ```jsx
@@ -102,8 +119,11 @@ import { DataTable } from '../components';
 ### Available Templates:
 - **MainLayout** - Standard app layout with header and sidebar
 - **FullscreenLayout** - Full-screen layout for login/auth pages
-- **DashboardTemplate** - Dashboard-specific layout
-- **PageTemplate** - Generic page template
+
+### Inventory-Specific Templates:
+- **InventoryLayout** - Inventory-specific layout with filters and actions
+- **ProductDetailLayout** - Product detail view layout
+- **ReportsLayout** - Reports and analytics layout
 
 ### Usage Example:
 ```jsx

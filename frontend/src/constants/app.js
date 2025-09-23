@@ -24,6 +24,7 @@ export const ROUTES = {
   TREATMENT: '/treatment',
   USER: '/user',
   INVENTORY: '/inventory',
+  PHARMACY: '/pharmacy',
   REPORTS: '/reports',
   PROFILE: '/profile',
   SETTINGS: '/settings'
@@ -131,6 +132,13 @@ export const SIDEBAR_NAVIGATION = [
     icon: 'InventoryIcon',
     path: ROUTES.INVENTORY,
     permissions: [USER_TYPES.ADMIN, USER_TYPES.EMPLOYEE]
+  },
+  {
+    id: 'pharmacy',
+    title: 'Pharmacy',
+    icon: 'LocalPharmacyIcon',
+    path: ROUTES.PHARMACY,
+    permissions: [USER_TYPES.ADMIN, USER_TYPES.EMPLOYEE, USER_TYPES.NURSE]
   },
   {
     id: 'reports',

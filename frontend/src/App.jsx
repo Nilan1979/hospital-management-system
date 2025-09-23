@@ -9,6 +9,7 @@ import AppointmentsPage from './pages/AppointmentsPage'
 import TreatmentPage from './pages/TreatmentPage'
 import UserPage from './pages/UserPage'
 import InventoryPage from './pages/InventoryPage'
+import PharmacyPage from './pages/PharmacyPage'
 import ReportsPage from './pages/ReportsPage'
 import ProtectedRoute from './components/ProtectedRoute'
 import { ROUTES } from './constants/app'
@@ -48,6 +49,11 @@ function App() {
           <Route path={ROUTES.INVENTORY} element={
             <ProtectedRoute>
               <InventoryPage />
+            </ProtectedRoute>
+          } />
+          <Route path={ROUTES.PHARMACY} element={
+            <ProtectedRoute>
+              <PharmacyPage />
             </ProtectedRoute>
           } />
           <Route path={ROUTES.REPORTS} element={
