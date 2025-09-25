@@ -19,6 +19,10 @@ import { errorHandler } from './middleware/errorHandler.js';
 // Load environment variables
 dotenv.config();
 
+
+// Connect to MongoDB
+connectDB();
+
 // Create Express app
 const app = express();
 const PORT = process.env.PORT || 3001;
