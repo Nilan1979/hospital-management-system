@@ -83,9 +83,10 @@ app.get('/api', (req, res) => {
   });
 });
 
-// Routes will be added here
-// app.use('/api/auth', authRoutes);
-// app.use('/api/users', userRoutes);
+
+// Patient routes
+import patientRoutes from './routes/patients.js';
+app.use('/api/patients', patientRoutes);
 
 // 404 handler
 app.use('*', (req, res) => {
