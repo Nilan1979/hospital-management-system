@@ -11,6 +11,8 @@ import { logger } from './config/logger.js';
 
 // Import middleware
 import { errorHandler } from './middleware/errorHandler.js';
+import medicationRoutes from './routes/medicineRoutes.js';
+import patientadmitRoutes from './routes/patientAdmit.js';
 
 // Import routes (will be created later)
 // import authRoutes from './routes/auth.js';
@@ -87,6 +89,10 @@ app.get('/api', (req, res) => {
 // Patient routes
 import patientRoutes from './routes/patients.js';
 app.use('/api/patients', patientRoutes);
+
+
+app.use('/medication', medicationRoutes);
+app.use('/patientadmit', patientadmitRoutes);
 
 // 404 handler
 app.use('*', (req, res) => {
