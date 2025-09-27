@@ -1,0 +1,186 @@
+body{
+  height: auto;
+  width: auto;
+}
+
+/* Main container with professional healthcare theme */
+.add-patient-container {
+
+  min-height: 100vh;
+  background: #eaeef9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+}
+
+/* Professional form card */
+.add-patient-form {
+  background: #ffffff;
+  border-radius: 24px;
+  box-shadow: 
+    0 12px 24px rgba(25, 118, 210, 0.12),
+    0 4px 8px rgba(25, 118, 210, 0.08);
+  width: 90%;
+  max-width: 700px;
+  height: auto;
+  padding: 1rem 1.2rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: 35px;
+  margin-bottom: 100px;
+
+}
+
+/* Grid Container Enhancement */
+.MuiGrid-container {
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.8));
+  border-radius: 12px;
+  padding: 0.5rem !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Grid Item Enhancement */
+.MuiGrid-item {
+  position: relative;
+  transition: transform 0.2s ease;
+}
+
+/* Input Fields Enhancement */
+.MuiTextField-root {
+  background: #ffffff;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+/* Input Base Enhancement */
+.MuiInputBase-root {
+  border-radius: 12px !important;
+}
+
+.MuiOutlinedInput-root {
+  background: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.MuiOutlinedInput-root:hover {
+  box-shadow: 0 4px 8px rgba(25, 118, 210, 0.1);
+}
+
+.MuiOutlinedInput-root.Mui-focused {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(25, 118, 210, 0.15);
+}
+
+/* Select Field Enhancement */
+.MuiSelect-select {
+  background: #ffffff !important;
+}
+
+/* Form Title */
+h1 {
+  color: #1976d2;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Buttons */
+.MuiButton-root {
+  text-transform: none !important;
+  font-weight: 600 !important;
+  padding: 8px 24px !important;
+  border-radius: 12px !important;
+  transition: all 0.2s ease !important;
+}
+
+.MuiButton-contained {
+  background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%) !important;
+  box-shadow: 0 4px 6px rgba(25, 118, 210, 0.2) !important;
+}
+
+.MuiButton-contained:hover {
+  box-shadow: 0 6px 12px rgba(25, 118, 210, 0.3) !important;
+  transform: translateY(-2px);
+}
+
+.MuiButton-outlined {
+  border: 2px solid #1976d2 !important;
+  color: #1976d2 !important;
+}
+
+/* Form Group Spacing */
+.MuiFormControl-root {
+  margin-bottom: 1rem !important;
+}
+
+/* Checkbox Enhancement */
+.MuiCheckbox-root {
+  color: #1976d2 !important;
+}
+
+/* Description Text Area */
+.MuiInputBase-multiline {
+  background: #ffffff;
+  border-radius: 12px !important;
+  padding: 8px !important;
+}
+
+/* Stack Container */
+.MuiStack-root {
+  margin-top: 2rem !important;
+  padding-top: 2rem !important;
+  border-top: 1px solid rgba(25, 118, 210, 0.1);
+}
+
+/* Error States */
+.Mui-error {
+  background-color: rgba(211, 47, 47, 0.05) !important;
+}
+
+.MuiFormHelperText-root.Mui-error {
+  background-color: transparent !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .add-patient-container {
+    padding: 1rem;
+  }
+
+  .add-patient-form {
+    padding: 1.5rem;
+  }
+
+  .MuiGrid-container {
+    padding: 1rem !important;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .MuiButton-root {
+    width: 100% !important;
+    margin-top: 0.5rem !important;
+  }
+
+  .MuiStack-root {
+    flex-direction: column-reverse !important;
+  }
+}
+
+/* High Contrast Support */
+@media (forced-colors: active) {
+  .add-patient-form {
+    border: 2px solid CanvasText;
+  }
+
+  .MuiGrid-container {
+    border: 1px solid CanvasText;
+  }
+}

@@ -5,6 +5,11 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import FormHelperText from '@mui/material/FormHelperText';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -185,49 +190,23 @@ export default function AddPatients({ backButtonPath = '/' }) {
           </Grid>
 
           <Grid item xs={12}>
-            <label
-              htmlFor="status"
-              style={{
-                display: 'block',
-                marginBottom: 4,
-                fontSize: 13,
-                color: errors.status ? '#d32f2f' : 'rgba(0, 0, 0, 0.6)',
-                fontWeight: '500',
-              }}
-            >
-              Status
-            </label>
-            <select
-              id="status"
-              name="status"
-              value={values.status}
-              onChange={(e) => handleFieldChange('status', e.target.value)}
-              style={{
-                width: '100%',
-                padding: '8px 12px',
-                borderRadius: 4,
-                border: errors.status ? '1px solid #d32f2f' : '1px solid #ccc',
-                fontSize: '14px',
-                outline: 'none',
-              }}
-            >
-              <option value="">None</option>
-              <option value="Pending">Pending</option>
-              <option value="Ongoing">Ongoing</option>
-              <option value="Completed">Completed</option>
-            </select>
-            {errors.status && (
-              <p
-                style={{
-                  color: '#d32f2f',
-                  fontSize: '0.75rem',
-                  marginTop: '4px',
-                  marginBottom: 0,
-                }}
+            <FormControl fullWidth error={!!errors.status} size="small">
+              <InputLabel id="status-label">Status</InputLabel>
+              <Select
+                labelId="status-label"
+                id="status"
+                name="status"
+                value={values.status}
+                label="Status"
+                onChange={(e) => handleFieldChange('status', e.target.value)}
               >
-                {errors.status}
-              </p>
-            )}
+                <MenuItem value=""><em>None</em></MenuItem>
+                <MenuItem value="Pending">Pending</MenuItem>
+                <MenuItem value="Ongoing">Ongoing</MenuItem>
+                <MenuItem value="Completed">Completed</MenuItem>
+              </Select>
+              <FormHelperText>{errors.status ?? ' '}</FormHelperText>
+            </FormControl>
           </Grid>
         </Grid>
 

@@ -5,17 +5,17 @@ import "./Navbar.css";
 export default function Navbar({ setIsLoggedIn }) {
   return (
     <nav className="nav_bar">
-      <Link to="/" className="site-title">HMS - Nurse Panel</Link>
+      <Link to="" className="site-title">HMS - Nurse Panel</Link>
       <ul>
-        <CustomLink to="/Treatment">Treatment Update</CustomLink>
-        <CustomLink to="/AddPatients">Patient Condition</CustomLink>
-        <CustomLink to="/Medications">Req Medications</CustomLink>
+        <CustomLink to="Treatment">Treatment Update</CustomLink>
+        <CustomLink to="AddPatients">Patient Condition</CustomLink>
+        <CustomLink to="Medications">Req Medications</CustomLink>
 
         <li>
           <span
             className="nav-link logout"
             onClick={() => {
-              const confirmLogout = window.confirm("Are you sure? Do you want to logout!");
+              const confirmLogout = window.confirm("Are you sure you want to logout?");
               if (confirmLogout) {
                 setIsLoggedIn(false);
               }

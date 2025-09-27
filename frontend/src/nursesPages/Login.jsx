@@ -1,20 +1,18 @@
-// src/pages/Login.js
+// src/nursesPages/Login.jsx
 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Login.css'; // 👈 Don't forget this import!
+import './Login.css';
 
-function Login({ setIsLoggedIn }) {
+function Login({ onLogin }) {  // ✅ Use onLogin prop instead of setIsLoggedIn
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
 
-  const handleLogin = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
+    // 🔐 Dummy check, replace with real backend logic later
     if (username === 'nurse' && password === '1234') {
-      setIsLoggedIn(true);
-      navigate('/nursehome');
+      onLogin(); // ✅ Calls NursesApp handleLogin which sets isLoggedIn and navigates
     } else {
       alert('Invalid username or password');
     }
@@ -22,7 +20,7 @@ function Login({ setIsLoggedIn }) {
 
   return (
     <div className="login-container">
-      <form className="login-form" onSubmit={handleLogin}>
+      <form className="login-form" onSubmit={handleSubmit}>
         <h2 className="login-title">Nurse Login</h2>
         <input
           type="text"
